@@ -676,8 +676,10 @@ class PageAdmin(item_editor.ItemEditor, tree_editor.TreeEditor):
     fieldsets = [
         (None, {
             'fields': [
-                ('title', 'slug'),
-                ('active', 'in_navigation'),
+                ('title',),
+                ('slug',),
+                ('active',),
+                ('in_navigation',),
                 ],
         }),
         (_('Other options'), {
@@ -738,9 +740,9 @@ class PageAdmin(item_editor.ItemEditor, tree_editor.TreeEditor):
                 page.id)
         actions = super(PageAdmin, self)._actions_column(page)
         if editable:
-            actions.insert(0, u'<a href="add/?parent=%s" title="%s"><img src="%sfeincms/img/icon_addlink.gif" alt="%s"></a>' % (
+            actions.insert(0, u'<a href="add/?parent=%s" title="%s" class="add-child"><img src="%sfeincms/img/icon_addlink.gif" alt="%s"></a>' % (
                 page.pk, _('Add child page'), django_settings.STATIC_URL ,_('Add child page')))
-        actions.insert(0, u'<a href="%s" title="%s"><img src="%sfeincms/img/selector-search.gif" alt="%s" /></a>' % (
+        actions.insert(0, u'<a href="%s" title="%s" class="view-on-site"><img src="%sfeincms/img/selector-search.gif" alt="%s" /></a>' % (
             preview_url, _('View on site'), django_settings.STATIC_URL, _('View on site')))
 
         return actions
