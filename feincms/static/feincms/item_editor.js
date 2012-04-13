@@ -99,29 +99,6 @@ if(!Array.indexOf) {
             control_units.append(move_control); // Add new one
         }
 
-        // Controls animations
-        item_controls.find("*").hide();
-        var is_hidden = true;
-        var mouseenter_timeout;
-        var mouseleave_timeout;
-        function hide_controls() {
-            item_controls.find("*").fadeOut(800);
-            is_hidden = true;
-        }
-        function show_controls() {
-            item_controls.find("*").fadeIn(800);
-            is_hidden = false;
-        }
-        item_controls.unbind('mouseleave'); // Unbind in case it's already been bound.
-        item_controls.mouseleave(function() {
-            clearTimeout(mouseenter_timeout);
-            mouseleave_timeout = setTimeout(hide_controls, 1000);
-        });
-        item_controls.unbind('mouseenter'); // Unbind in case it's already been bound.
-        item_controls.mouseenter(function() {
-            clearTimeout(mouseleave_timeout);
-            if (is_hidden) mouseenter_timeout = setTimeout(show_controls, 200); // To prevent the control bar to appear when mouse accidentally enters the zone.
-        });
     }
 
 
