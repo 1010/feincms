@@ -315,9 +315,9 @@ if(!Array.indexOf) {
     $(document).ready(function($){
         hide_form_rows_with_hidden_widgets();
 
-        $("#main_wrapper > .navi_tab").click(function(){
+        $("#main_wrapper .navi_tab").click(function(){
             var elem = $(this);
-            $("#main_wrapper > .navi_tab").removeClass("tab_active");
+            $("#main_wrapper .navi_tab").removeClass("tab_active");
             elem.addClass("tab_active");
             $("#main > div:visible, #main > fieldset:visible").hide();
 
