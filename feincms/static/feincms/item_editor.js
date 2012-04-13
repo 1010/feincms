@@ -533,7 +533,7 @@ if(!Array.indexOf) {
                 }
             }
 
-            $('#main_wrapper>div.navi_tab:first-child').trigger('click');
+            $('#main_wrapper div.navi_tab:first-child').trigger('click');
         }
     });
 
