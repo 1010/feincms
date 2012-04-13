@@ -682,12 +682,12 @@ class PageAdmin(item_editor.ItemEditor, tree_editor.TreeEditor):
                 ('in_navigation',),
                 ],
         }),
+        # <-- insertion point, extensions appear here, see insertion_index above
+        item_editor.FEINCMS_CONTENT_FIELDSET,
         (_('Other options'), {
             'classes': ['collapse',],
             'fields': unknown_fields,
         }),
-        # <-- insertion point, extensions appear here, see insertion_index above
-        item_editor.FEINCMS_CONTENT_FIELDSET,
         ]
     readonly_fields = []
     list_display = ['short_title', 'is_visible_admin', 'in_navigation_toggle', 'template']

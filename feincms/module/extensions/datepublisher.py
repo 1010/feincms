@@ -86,8 +86,6 @@ def register(cls, admin_cls):
 
     admin_cls.list_display.insert(pos + 1, 'datepublisher_admin')
 
-    admin_cls.add_extension_options(_('Date-based publishing'), {
-                'fields': ('publication_date', 'publication_end_date'),
-        })
+    admin_cls.fieldsets[2][1]['fields'].extend(('publication_date', 'publication_end_date'))
 
 # ------------------------------------------------------------------------
