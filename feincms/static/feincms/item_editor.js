@@ -148,6 +148,8 @@ if(!Array.indexOf) {
         else {
             item.show();
         }
+        
+        $('body').trigger('cmsItemAdded', [item]);
     }
 
     function create_new_spare_form(modvar) {
